@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  body
+    #content
+      #weatherContent
+        #weatherText
+          if (weatherObj)
+            #cityAndTemp
+              h1#city= weatherObj.city
+              p#temp #{weatherObj.temp} 
+                if (weatherObj.units === "imperial")
+                  | &deg;F
+                else 
+                  | &deg;C
+            p#weatherDescription= weatherObj.description
+        #weatherGif
+          if (gifObj)
+            img(src= gifObj.src, alt=gifObj.alt)
+      #searchContainer
+        form(action="" method="POST")
+          #searchForm
+            button(id="updateWeatherButton" type="submit") 🔍
+            input(
+              id="cityInput" 
+              name="cityName"
+              type="text"
+              placeholder="Search by city name"
+            ) 
+            #unitsInput
+              input(class="unitsRadio" id="celcius" value="metric" name="units" type="radio")
+              label(class="unitsLabel" for="celcius") °C
+              input(class="unitsRadio" id="farenheit" value="imperial" name="units" type="radio")
+              label(class="unitsLabel" for="farenheit") °F

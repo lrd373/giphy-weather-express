@@ -1,0 +1,236 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+#content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Weather Content */
+
+/* SMALL DEVICES */
+@media(max-width: 500px) {
+    /* Weather Text Area */
+    #weatherText {
+      background-color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      justify-content: baseline;
+      align-items: baseline;
+      flex-wrap: wrap;
+      position: fixed;
+      width: 100%;
+      padding: 1rem 0 0 1rem;
+      z-index: 999;
+    }
+  
+    #city {
+      border-right: 0.3rem solid black;
+      padding-right: 1rem;
+      display: inline;
+      font-size: 4rem;
+      margin: 0;
+    }
+  
+    #temp {
+      display: inline;
+      margin: 0;
+      padding-left: 1rem;
+      white-space: nowrap;
+      font-size: 2rem;
+    }
+  
+    #weatherDescription {
+      font-size: 2rem;
+      text-transform: capitalize;
+      margin-top: 5px;
+    }
+  
+    /* Weather Gif */
+  
+    #weatherGif {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+}
+
+/* MEDIUM DEVICES */
+@media(min-width: 501px) {
+  #weatherContent {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+  } 
+  
+    /* Weather Text Area */
+    #weatherText {
+      grid-column: 1/4;
+      padding: 1rem 0 0 1rem;
+    }
+
+    #cityAndTemp {
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+  
+    #city {
+      /* border-bottom: 0.3rem solid black; */
+      border-right: 0.3rem solid black;
+      padding-right: 0.75rem;
+      display: inline;
+      font-size: 3rem;
+      margin: 0;
+    }
+  
+    #temp {
+      display: inline;
+      margin: 0.5rem 0;
+      white-space: nowrap;
+      font-size: 2rem;
+    }
+  
+    #weatherDescription {
+      display: block;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      margin: 0.5rem 0;
+    }
+  
+    /* Weather Gif */
+  
+    #weatherGif {
+      display: flex;
+      justify-content: flex-end;
+      grid-column: 4/11;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+}
+
+/* LARGE DEVICES */
+@media(min-width: 1200px) {
+  #weatherContent {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+  } 
+  
+    /* Weather Text Area */
+    #weatherText {
+      grid-column: 1/4;
+      padding: 1rem 0 0 1rem;
+    }
+
+    #cityAndTemp {
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+  
+    #city {
+      /* border-bottom: 0.3rem solid black; */
+      border-right: 0.3rem solid black;
+      padding-right: 1rem;
+      display: inline;
+      font-size: 3rem;
+      margin: 0;
+    }
+  
+    #temp {
+      display: inline;
+      margin: 0.5rem 0;
+      padding-left: 1rem;
+      white-space: nowrap;
+      font-size: 2rem;
+    }
+  
+    #weatherDescription {
+      display: block;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      margin: 0.5rem 0;
+    }
+  
+    /* Weather Gif */
+  
+    #weatherGif {
+      display: flex;
+      justify-content: flex-end;
+      grid-column: 4/11;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+}
+
+
+/* Search Area */
+
+#searchContainer {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+#searchForm {
+  background-color: rgba(255, 255, 255, 0.288);
+  border-radius: 5px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  width: max-content;
+  height: 25px;
+}
+
+#cityInput {
+  background-color: transparent;
+  border: none;
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-size: 0.9em;
+}
+
+#updateWeatherButton {
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  text-shadow: 0 0 0 rgb(51, 52, 56);
+}
+
+.unitsLabel {
+  font-family: "Roboto", sans-serif;
+}
