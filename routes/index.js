@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const config = require('../config');
 const fetch = require('node-fetch');
 const async = require('async');
 const { body, validationResult } = require('express-validator');
 const unescape = require('../unescape');
 
-const openWeatherAPI = config.OPEN_WEATHER_API_KEY;
-const giphyAPI = config.GIPHY_API_KEY;
+const openWeatherAPI = process.env.OPEN_WEATHER_API_KEY;
+const giphyAPI = process.env.GIPHY_API_KEY;
 
 
 // POST -- CITY and/or UNITS SPECIFIED
