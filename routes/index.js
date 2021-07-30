@@ -1,4 +1,5 @@
 var express = require('express');
+require('dotenv').config()
 var router = express.Router();
 const fetch = require('node-fetch');
 const async = require('async');
@@ -56,7 +57,7 @@ router.get('/:city/:units', (req, res, next) => {
         },
         function(weatherJSON, callback) {
             let cityName = weatherJSON.name;
-            let temp = weatherJSON.main.temp;
+            let temp = Math.round(weatherJSON.main.temp);
             let description = weatherJSON.weather[0].description;
             let searchDescription = description;
 
