@@ -1,5 +1,5 @@
 var express = require('express');
-require('dotenv').config()
+require('dotenv').config();
 var router = express.Router();
 const fetch = require('node-fetch');
 const async = require('async');
