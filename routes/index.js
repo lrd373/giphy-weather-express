@@ -1,13 +1,13 @@
 var express = require('express');
+require('dotenv').config();
 var router = express.Router();
-const config = require('../config');
 const fetch = require('node-fetch');
 const async = require('async');
 const { body, validationResult } = require('express-validator');
 const unescape = require('../unescape');
 
-const openWeatherAPI = config.OPEN_WEATHER_API_KEY;
-const giphyAPI = config.GIPHY_API_KEY;
+const openWeatherAPI = process.env.OPEN_WEATHER_API_KEY;
+const giphyAPI = process.env.GIPHY_API_KEY;
 
 
 // POST -- CITY and/or UNITS SPECIFIED
@@ -57,7 +57,7 @@ router.get('/:city/:units', (req, res, next) => {
         },
         function(weatherJSON, callback) {
             let cityName = weatherJSON.name;
-            let temp = weatherJSON.main.temp;
+            let temp = Math.round(weatherJSON.main.temp);
             let description = weatherJSON.weather[0].description;
             let searchDescription = description;
 
